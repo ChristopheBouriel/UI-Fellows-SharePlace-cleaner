@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: rgb(33, 33, 33);
+    box-sizing: border-box;
+}
+
+footer {
+    height: 40px;
+}
+
+label {
+    color: whitesmoke;
+}
+
+.mat-button-wrapper {
+    color: whitesmoke;
+}
+/*
+.mat-raised-button.mat-button-base.mat-primary {
+    border: whitesmoke solid 1px;
+}
+*/
+button {
+    
+    padding: 5px 10px 5px 10px;
+    color: black;
+    border-radius: 15px;
+    margin: 10px;
+    font-size: 1rem;
+    box-shadow: none;
+    border: none;
+}
+
+
+button:disabled {
+    border: whitesmoke solid 1px;
+}
+
+.form-control {
+    background-color: rgb(55, 55, 55);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+a, a:hover{
+    text-decoration: none;
+    outline: none;
+
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: rgba(255, 209, 129, 0.722);
+  }
+
+.hidden-accessibility {
+    display: none;}
+
+
