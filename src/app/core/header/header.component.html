@@ -15,12 +15,12 @@
         </div>
         
         <nav class="menu row no-gutters mb-3 mt-1 ">           
-            <a class="col-xs-12 col-sm-5 mx-auto mx-md-0 mr-md-1 col-md-3 mb-1 text-center" routerLinkActive="active-link" *ngIf="!isAuth" routerLink="login">Connexion</a>
+            <a class="col-xs-12 col-sm-5 mx-auto mx-md-0 mr-md-1 col-md-3 mb-1 text-center" routerLinkActive="active-link" *ngIf="!isAuth" [routerLink]="['login']">Connexion</a>
             <a class="col-xs-12 col-sm-5 mx-auto mx-md-0 col-md-3 mb-1 text-center" routerLinkActive="active-link" *ngIf="!isAuth" routerLink="signup">Inscription</a>
         </nav>       
     </div>
 </div>
 
-<!--<div class="row message mb-2">
+<div class="row message mb-2">
     <p class="col-12 text-center" *ngIf="showMessage === true"> {{headMessage}}</p>
-</div>-->
+</div>

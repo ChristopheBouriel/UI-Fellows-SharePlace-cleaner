@@ -1,0 +1,22 @@
+@import '../../colors.scss';
+
+.form-control {
+    background-color: rgb(55, 55, 55);
+    color: whitesmoke;
+}
+
+button {        
+    background-color: $btn-main;
+    padding: 5px;
+    border-radius: 50%;       
+    img {
+    width: 30px;
+    height: 30px; 
+    }       
+}
+button:disabled {
+    opacity: 0;
+}
+button:hover {
+    background-color: $grey-black;
+}
