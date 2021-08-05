@@ -10,8 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
 import { AuthInterceptor } from './interceptors/auth-interceptor';
 
-//import { ReactiveFormsModule } from '@angular/forms';
-//import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CoreRoutingModule } from './core-routing.module';
 
 
 @NgModule({
@@ -23,8 +23,8 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
   ],
   imports: [
     CommonModule,
-    //RouterModule
-    //ReactiveFormsModule
+    CoreRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthService,
