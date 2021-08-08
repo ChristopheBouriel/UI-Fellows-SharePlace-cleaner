@@ -1,0 +1,20 @@
+<li [ngClass]="{'list-group-item': true, 'items-publi': true }" id="{{id}}">
+    <div class="overview">        
+        <div class="profilePic pt-0" >
+            <img [src]="publicationImageUser" alt="profile picture {{publicationUserName}}">        
+            <p>Par <a routerLink="/profile/{{publicationUserName}}" fragment="page-top-profil" (click)="onSeeProfile()">{{publicationUserName}}</a> le {{publicationDate | date: 'd LLLL yyyy'}}</p>
+        </div>
+        <h3 class="mb-3 text-center" [ngStyle]="{color: ' rgb(176, 94, 31)'}">{{title}}</h3>
+        <div class="text-overview">
+            <p *ngIf="publicationModerated !== 1">{{content}}</p>            
+            <p *ngIf="publicationModerated===1" class="text-danger moderatedBackground">Ce contenu a été masqué suite à modération</p>
+        </div>
+        <div class="numbers row" *ngIf="!publicationModerated">
+            <p class="col-6 text-left"><a [routerLink]="[id]" (click)="onSeePublication('likers')">{{numberLikes | i18nPlural: numberLikesMapping}}</a></p>
+            <p class="col-6 text-right"><a [routerLink]="[id]" (click)="onSeePublication('com')">{{publicationNumberComments | i18nPlural: numberCommentsMapping}}</a></p>
+        </div>
+    </div>
+    <div class="see-it" *ngIf="publicationModerated !== 1 || moderator">
+        <a [routerLink]="[id]" (click)="onSeePublication()"><img src="./assets/images/see-icon.png" alt="see icon"></a>        
+    </div>
+</li>

@@ -1,0 +1,46 @@
+@import '../../colors.scss';
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-style: italic;
+        border: solid 3px $post-bg;
+        //background-color: $btn-main;
+        border-radius: 20px;
+        padding: 7px 10px 7px 10px;
+        color: whitesmoke;
+    }
+
+    button {
+        font-size: 1.3rem;
+        background-color: $grey-black;
+        border: solid 3px $post-bg;
+        border-radius: 20px;
+        color: whitesmoke;
+        font-weight: 600;
+        height: 52px;
+        margin-bottom: 15px;
+
+    }
+
+    button:hover {
+        background-color: $btn-main;
+    }
+
+}
+
+form {
+    button {
+    background-color: $btn-main;
+    color:whitesmoke;
+    }
+    button:hover {
+        background-color: $post-bg;
+    }
+    
+}

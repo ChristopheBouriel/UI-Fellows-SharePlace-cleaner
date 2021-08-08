@@ -1,0 +1,50 @@
+<div class="row mt-3" id="page-top-list">
+    <div class="col-xs-10 col-lg-8 mx-auto">
+      <mat-spinner style="margin:0 auto" *ngIf="loading"></mat-spinner>
+      <div class="top row col-md-10 col-lg-12 mx-auto px-0">
+          <h2 class="text-center align-self-center col-8 mb-2 mx-auto d-none d-sm-block">Les dernières publications</h2>
+          <button class="col-6 col-sm-3 ml-sm-1 text-center align-self-center mx-auto" *ngIf="!posting" (click)="onWantPost()">Publier</button>
+      </div>
+      <div class="row">
+        <p class="text-danger col-6 mx-auto text-center" *ngIf="errorMsg">{{ errorMsg }}</p>
+      </div>
+      <form [formGroup]="publicationForm" *ngIf="!loading && posting">
+          <div class="form-group">
+              <label for="title">Titre</label>
+              <input type="text" class="form-control" id="title" formControlName="title">
+          </div>
+          <div *ngIf="publicationForm.get('title').errors && (publicationForm.get('title').touched || publicationForm.get('title').dirty)">
+            <p class="text-danger" *ngIf="publicationForm.get('title').errors?.required">A title is required</p>
+            <p class="text-danger" *ngIf="publicationForm.get('title').errors?.maxlength">The title must be at max 100 characters</p>
+            <p class="text-danger" *ngIf="publicationForm.get('title').errors?.pattern">Title must start with a capital, contain only letters, numbers and the following symbols : !?:(),.'"-</p>
+          </div>
+          <div class="form-group mt-3">
+            <label for="publication">Publication</label>
+            <textarea class="form-control" id="publication" formControlName="publication" rows="7"></textarea>
+          </div>
+          <div *ngIf="publicationForm.get('publication').errors && (publicationForm.get('publication').touched || publicationForm.get('publication').dirty)">
+            <p class="text-danger" *ngIf="publicationForm.get('publication').errors?.required">A content is required</p>
+            <p class="text-danger" *ngIf="publicationForm.get('publication').errors?.maxlength">Publication must be at max 4000 characters long</p>
+            <p class="text-danger" *ngIf="publicationForm.get('publication').errors?.forbiddenCharacter">Characters cannot be &lt; > or *</p>
+          </div>        
+          <button mat-raised-button class="my-2 mr-2" [disabled]="publicationForm.invalid" (click)="onPost()">Envoyer</button>
+          <button mat-raised-button class="mb-3" (click)="onCancel()">Annuler</button> 
+      </form>
+  
+      <ul class="list-group col-md-10 mx-auto col-lg-12 px-0">
+          <app-publications-list-items  *ngFor="let publication of publications; let i = index"
+                [publicationTitle]="publication.title"
+                [publicationContent]="publication.content"
+                [publicationDate]="publication.date_publication"
+                [publicationLikes]="publication.likes"
+                [publicationNumberComments]="publication.numberComments"
+                [publicationUserName]="publication.userName"
+                [publicationImageUser]="publication.imageUrl"
+                [publicationModerated]="publication.moderated"
+                [index]="i" 
+                [id]="publication.id"
+                [publicationLikeUsernames]="publication.likeUsernames">
+          </app-publications-list-items>
+      </ul>
+    </div> 
+  </div>

@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ProfileModule } from './profile/profile.module';
+import { PublicationsModule } from './publications/publications.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ProfileModule } from './profile/profile.module';
     CoreModule,
     SharedModule,
     ProfileModule,
+    PublicationsModule,
     AppRoutingModule,
         
   ],
