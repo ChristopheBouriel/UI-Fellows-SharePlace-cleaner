@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
       username: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     });
-    console.log('There')
     this.authSubscription = this.authService.isAuth$.subscribe(
       (auth) => {this.isAuth = auth;});
   }

@@ -7,7 +7,10 @@ import { ProfileFormComponent } from './profile/profile-form/profile-form.compon
 const routes: Routes = [
   {path: 'entrance', component: EntranceComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'signup', component: ProfileFormComponent},
+  {path: 'signup', loadChildren: () =>
+import('./profile/profile.module').then(m => m.ProfileModule)
+/*component: ProfileFormComponent*/},
+
   {path: '', pathMatch: 'full', redirectTo: 'entrance'},
   {path: '**', redirectTo: 'entrance' }
 ];
