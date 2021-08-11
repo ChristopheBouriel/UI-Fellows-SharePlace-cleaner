@@ -1,0 +1,36 @@
+<mat-spinner style="margin:0 auto" *ngIf="loading"></mat-spinner>
+
+<div class="stats row mx-1">
+    <div class="col-4 text-left mt-1">
+        <a routerLink="/publications/{{postId}}" (click)="seeLikers=!seeLikers">{{likers?.length}} J'aime</a>
+    </div>
+    <div class="col-8 text-right mt-1">
+        <a routerLink="/publications/{{postId}}" (click)="seeComments=!seeComments">{{numberComments | i18nPlural: numberCommentsMapping}}</a> 
+    </div>   
+</div>
+
+<div class="likers-list row mx-3 mb-5 mt-4" *ngIf="seeLikers && likers?.length>0">
+    <p class="text-center col-11 mx-auto mb-4 mt-2">Ces utilisateurs ont aimé :</p>
+    <ul class="col-11 mx-auto">
+        <li *ngFor="let liker of likers; let i = index">
+        <a routerLink="/profile/{{likers[i]}}" fragment="page-top-profil" (click)="onSeeProfile()">{{likers[i]}}</a>
+        </li>
+    </ul>
+</div>
+
+<ul class="list-group row mt-4" *ngIf="seeComments">
+    <app-comment-list-item  *ngFor="let comment of comments; let i = index"
+          [commentUserName]="comment.userName"
+          [commentImageUrl]="comment.imageUrl"
+          [commentContent]="comment.content"
+          [commentDate]="comment.date_comment"
+          [modifDate]="comment.date_modif"
+          [modified]="comment.modified"
+          [commentModerated]="comment.moderated"
+          [index]="i" 
+          [postId]="comment.postId"
+          [pubId]="pubId"
+          [id]="comment.id">
+    </app-comment-list-item>    
+</ul>
+

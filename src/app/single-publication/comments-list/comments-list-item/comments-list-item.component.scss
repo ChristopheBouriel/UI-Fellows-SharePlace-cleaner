@@ -1,0 +1,114 @@
+@import '../../../colors';
+
+li {
+    background-color:  rgb(33,33,33);
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px 0px 0px 0px;
+    border: none;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    p {        
+        color: whitesmoke;        
+    }
+    span {
+        font-weight: 500;
+    }
+    
+    a {
+    color: $prof-link;
+    }
+    
+    a:hover {
+        color: whitesmoke;
+    }
+
+    a:focus {
+    border: solid 1px $btn-main;
+    }
+
+}
+
+.comment {
+    padding: 0px 10px;
+}
+
+.comment-all {
+    background-color:  $grey-black;
+    border: solid 1px $btn-main;  
+    border-radius: 10px;
+}
+
+.comment-view {
+    border: solid $post-bg 1px;
+    border-radius: 5px;
+    background-color: whitesmoke;       
+    font-size: 1.1rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    p {
+        white-space: pre-line;
+    }
+}
+
+.list-group-item .moderatedBackground {
+    font-size: 1.1rem;
+    text-align: center;
+    color: rgb(221, 55, 9);
+}
+
+.modr {
+    background-color: $grey-black;
+    border: solid 1px whitesmoke;
+    span {
+    color: whitesmoke;
+    }
+}
+
+.mod span {
+    color: black;
+}
+
+.profilePic {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 0px;
+    img {
+        background-color: black;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: solid 1px $post-bg;
+        margin-right: 10px;
+    }
+}
+
+.form-control {
+    background-color: whitesmoke;
+}
+
+label {
+    color: $post-bg;
+}
+
+button {
+    background-color: $btn-main;
+    color: whitesmoke;    
+}
+
+button:hover {
+    background-color: $post-bg;
+}
+
+button:focus {
+    outline-offset: 0px;
+}
+
+button:disabled {
+    background-color: $grey-black;
+}
+
