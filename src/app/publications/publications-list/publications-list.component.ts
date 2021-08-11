@@ -9,10 +9,10 @@ import { forbiddenCharactersValidator } from '../../shared/input-validators';
 
 @Component({
   selector: 'app-publication-list',
-  templateUrl: './publication-list.component.html',
-  styleUrls: ['./publication-list.component.scss']
+  templateUrl: './publications-list.component.html',
+  styleUrls: ['./publications-list.component.scss']
 })
-export class PublicationListComponent implements OnInit {
+export class PublicationsListComponent implements OnInit {
 
   publications: any[];
   publicationsSubscription: Subscription;
@@ -54,7 +54,7 @@ export class PublicationListComponent implements OnInit {
       publication: new FormControl(null, [Validators.required, Validators.maxLength(4000), forbiddenCharactersValidator(/[<>*]/)]),        
       });
 
-    
+    console.log('Publications loaded')
       
   }
 

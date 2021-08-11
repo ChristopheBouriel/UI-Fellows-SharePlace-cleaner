@@ -34,6 +34,7 @@ export class ProfileFormComponent implements OnInit {
               private authService: AuthService) { }
 
   ngOnInit(): void {
+    console.log('There')
     this.loading = true;
     this.loadingPic = true;
     this.route.params.subscribe(

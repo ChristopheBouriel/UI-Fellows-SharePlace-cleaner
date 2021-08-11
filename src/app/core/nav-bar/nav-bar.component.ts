@@ -44,6 +44,7 @@ export class NavBarComponent implements OnInit {
         this.userName = userName;
       }
     );
+    console.log('Let\'s see')
   }
 
   onLogout() {
