@@ -12,7 +12,8 @@ const routes: Routes = [
 /*component: ProfileFormComponent*/},
   {path: 'publications', loadChildren: () =>
   import('./publications/publications.module').then(m => m.PublicationsModule)},
-
+  {path: 'publications/id', loadChildren: () =>
+  import('./single-publication/single-publication.module').then(m => m.SinglePublicationModule)},
   {path: '', pathMatch: 'full', redirectTo: 'entrance'},
   {path: '**', redirectTo: 'entrance' }
 ];
