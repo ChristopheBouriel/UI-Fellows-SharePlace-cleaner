@@ -14,6 +14,9 @@ const routes: Routes = [
   import('./publications/publications.module').then(m => m.PublicationsModule)},
   {path: 'publications/id', loadChildren: () =>
   import('./single-publication/single-publication.module').then(m => m.SinglePublicationModule)},
+  {path: 'profile/:username', loadChildren: () =>
+  import('./profile/profile.module').then(m => m.ProfileModule)},
+
   {path: '', pathMatch: 'full', redirectTo: 'entrance'},
   {path: '**', redirectTo: 'entrance' }
 ];

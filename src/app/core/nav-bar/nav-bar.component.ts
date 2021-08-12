@@ -47,6 +47,11 @@ export class NavBarComponent implements OnInit {
     console.log('Let\'s see')
   }
 
+  /*onSeeMine() {
+    this.profileService.seeMine = true;
+    this.profileService.searchingSubject.next(false);    
+  }*/
+
   onLogout() {
     const date = new Date().toISOString();
     const dbDate = date.split('.')[0].replace('T',' ');
