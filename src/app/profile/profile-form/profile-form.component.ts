@@ -4,8 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileService } from '../profile.service';
 import { Profile } from '../../core/models/profile';
 import { AuthService } from '../../core/services/auth.service';
-import { forbiddenCharactersValidator } from '../../shared/input-validators';
-import { emailValidator } from '../../shared/input-validators';
+import { forbiddenCharactersValidator,  emailValidator } from '../../shared/input-validators';
 
 @Component({
   selector: 'app-profile-form',

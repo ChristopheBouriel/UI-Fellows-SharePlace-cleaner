@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 
 //import { forbiddenCharactersValidator } from './input-validators'
 
-import { SharedRoutingModule } from './shared-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    SharedRoutingModule
-  ]
+    ReactiveFormsModule
+  ],
+  exports: [ReactiveFormsModule]
 })
 export class SharedModule { }

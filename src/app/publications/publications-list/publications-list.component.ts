@@ -3,7 +3,6 @@ import { Subscription } from 'rxjs';
 import { PublicationsService} from '../publications.service';
 import { AuthService } from '../../core/services/auth.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { forbiddenCharactersValidator } from '../../shared/input-validators';
 
@@ -24,24 +23,16 @@ export class PublicationsListComponent implements OnInit {
   constructor(private publicationService: PublicationsService,
               private formBuilder: FormBuilder,
               private authService: AuthService,
-              //private router: Router,
               private viewportScroller: ViewportScroller) { }
 
   ngOnInit() {
     this.publicationsSubscription = this.publicationService.publicationsSubject.subscribe(
       (publications:any[]) => {
         this.publications = publications;
-
-      /*this.publicationService.checkAnchors().then(
-        (response) => {          
-            this.viewportScroller.setOffset([0,100]);
-            this.viewportScroller.scrollToAnchor(this.publicationService.lastSeenInList);                
-        })*/
-
         this.publicationService.numberIndexes.subscribe(
           () => {
             if (this.publications.length  === this.publicationService.numberIndexes.value + 1) {
-              console.log('Scrolling');
+              //console.log('Scrolling');
               this.viewportScroller.setOffset([0,100]);
               this.viewportScroller.scrollToAnchor(this.publicationService.lastSeenInList);
             }                

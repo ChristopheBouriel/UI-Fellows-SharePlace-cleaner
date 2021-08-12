@@ -16,7 +16,7 @@ registerLocaleData(localeFr, 'fr');
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
+//import { SharedModule } from './shared/shared.module';
 import { ProfileModule } from './profile/profile.module';
 import { PublicationsModule } from './publications/publications.module';
 import { SinglePublicationModule } from './single-publication/single-publication.module';
@@ -34,7 +34,7 @@ import { SinglePublicationModule } from './single-publication/single-publication
     MatAutocompleteModule,
     //ReactiveFormsModule,
     CoreModule,
-    SharedModule,
+    //SharedModule,
     ProfileModule,
     PublicationsModule,
     SinglePublicationModule,
