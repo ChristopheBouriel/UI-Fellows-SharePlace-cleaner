@@ -1,0 +1,14 @@
+<li [ngClass]="{'list-group-item': true}" id="{{id}}" class="mx-auto">
+    <div class="overview">
+        <h2 [ngStyle]="{color: 'rgb(176, 94, 31)'}">{{title}}</h2>
+        <p>Par <span>{{publicationUserName}}</span> le {{publicationDate | date: 'd LLLL yyyy'}}</p>
+        <div  class="text-overview">
+            <p *ngIf="publicationModerated !== 1">{{content}}</p>
+            <p *ngIf="publicationModerated === 1" class="moderatedBackground">Ce contenu a été masqué suite à modération</p>
+        </div>
+    </div>
+    <div class="see-it" *ngIf="publicationModerated !== 1 || isAuthor">
+        <a (click)="onSeePublication()"><img src="./assets/images/see-icon.png" alt="see icon"></a>
+    </div>
+</li>
+

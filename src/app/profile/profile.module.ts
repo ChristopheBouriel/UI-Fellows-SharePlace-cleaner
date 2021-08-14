@@ -7,10 +7,11 @@ import { ProfileFormComponent } from './profile-form/profile-form.component';
 import { ProfileService } from './profile.service';
 import { SharedModule } from '../shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
+import { UserPublicationsComponent } from './profile/user-publications/user-publications.component';
 
 
 @NgModule({
-  declarations: [ProfileFormComponent, ProfileComponent],
+  declarations: [ProfileFormComponent, ProfileComponent, UserPublicationsComponent],
   imports: [
     CommonModule,
     SharedModule,
