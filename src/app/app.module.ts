@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 //import { SharedModule } from './shared/shared.module';
 import { ProfileModule } from './profile/profile.module';
+import { SearchUsersModule } from './search-users/search-users.module'
 import { PublicationsModule } from './publications/publications.module';
 import { SinglePublicationModule } from './single-publication/single-publication.module';
 
@@ -36,6 +37,7 @@ import { SinglePublicationModule } from './single-publication/single-publication
     CoreModule,
     //SharedModule,
     ProfileModule,
+    SearchUsersModule,
     PublicationsModule,
     SinglePublicationModule,
     AppRoutingModule,

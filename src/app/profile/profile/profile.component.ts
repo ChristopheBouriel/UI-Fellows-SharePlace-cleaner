@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Profile, ShortProfile } from '../../core/models/profile';
+import { Profile} from '../../core/models/profile';
 import { Publication } from '../../core/models/publication';
 import { ProfileService} from '../profile.service';
 import { PublicationsService} from '../../publications/publications.service';
 import { AuthService} from '../../core/services/auth.service';
-import { FormControl, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+
 import { ViewportScroller } from '@angular/common';
 
 
@@ -22,7 +20,7 @@ export class ProfileComponent implements OnInit {
   loading: boolean;
   profile: Profile;
   publications: Publication[];
-  shortProfiles: ShortProfile[];
+  
   usersNameList: string[] = new Array;
   aboutMe: string;
   fromPost: number;

@@ -8,8 +8,7 @@ const routes: Routes = [
   {path: 'entrance', component: EntranceComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', loadChildren: () =>
-  import('./profile/profile.module').then(m => m.ProfileModule)
-/*component: ProfileFormComponent*/},
+  import('./profile/profile.module').then(m => m.ProfileModule)},
   {path: 'publications', loadChildren: () =>
   import('./publications/publications.module').then(m => m.PublicationsModule)},
   {path: 'publications/id', loadChildren: () =>

@@ -45,7 +45,7 @@ export class PublicationsListComponent implements OnInit {
       publication: new FormControl(null, [Validators.required, Validators.maxLength(4000), forbiddenCharactersValidator(/[<>*]/)]),        
       });
 
-    console.log('Publications loaded')
+    //console.log('Publications loaded')
       
   }
 

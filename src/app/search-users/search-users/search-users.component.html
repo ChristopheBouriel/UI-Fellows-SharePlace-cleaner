@@ -1,0 +1,52 @@
+<div class="row" id="page-top-profil">
+    <div class="col-10 col-lg-8 mx-auto">
+
+        <mat-spinner style="margin:0 auto;" *ngIf="loading"></mat-spinner>
+                
+        <div class="search row no-gutters mx-0">
+            <div class="text-center col-6 col-sm-2 order-2 order-sm-1 py-sm-3">
+                <button class="mx-auto" ><img src="./assets/images/back-icon.png" alt="back icon"></button>
+            </div>
+            <h2 class="text-center align-self-center col-12 col-sm-8 py-3 px-2 mb-2 mx-auto order-1 order-sm-2">Liste des utilisateurs</h2>
+            <div class="text-center col-6 col-sm-2 order-3 py-sm-3">
+                <button (click)="onButtonSearch()"><img src="./assets/images/search-icon.png" alt="search icon"></button>
+            </div>
+        </div>
+        <div class="users-list">
+            <div id="search-tool" class="mb-5" *ngIf="research">
+                <div id="noUser">
+                    <p class="col-10 mx-auto" *ngIf="noUser">{{noUser}}</p>
+                </div>
+                <form [formGroup]="searchForm" class="row no-gutters align-items-center mt-1 mx-0 mx-sm-5" >
+                    <mat-form-field class="col-8">                            
+                        <input type="text"
+                                id="search-window"
+                                placeholder="Entrer un utilisateur"
+                                aria-label="Entrer un utilisateur"
+                                name="search"
+                                #inputUserName
+                                matInput
+                                [formControl]="searchControl"
+                                [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let username of filteredUsernames | async" [value]="username">
+                                {{username}}
+                        </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                    <button mat-raised-button class="mx-auto col-4" type="submit" (click)="onSearch(inputUserName.value)">Rechercher</button>
+                </form>                        
+            </div>                
+            <ul class="list-group mt-4">        
+                <app-users-list *ngFor="let shortProfile of shortProfiles; let j = index"
+                    [userName]="shortProfile.userName"
+                    [firstname]="shortProfile.firstname"
+                    [lastname]="shortProfile.lastname"
+                    [serviceName]="shortProfile.serviceName"
+                    [imageUrl]="shortProfile.imageUrl">
+                </app-users-list>
+            </ul>
+        </div>
+    </div>
+</div>
+

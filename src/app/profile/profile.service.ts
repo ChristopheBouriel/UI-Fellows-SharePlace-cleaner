@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Profile, ShortProfile } from '../core/models/profile';
+import { Profile } from '../core/models/profile';
 import { Publication} from '../core/models/publication';
 import { Subject, BehaviorSubject } from 'rxjs';
 
@@ -8,15 +8,14 @@ import { Subject, BehaviorSubject } from 'rxjs';
 export class ProfileService {
 
   profileSubject = new Subject<Profile>();
-  shortProfileSubject = new Subject<ShortProfile[]>();
+  
   userPublicationsSubject = new Subject<Publication[]>();
   postNotifSubject = new Subject();
   commentNotifSubject = new Subject();
-  usersListSubject = new Subject();
-  searchingSubject = new BehaviorSubject(false);
+  
+  //searchingSubject = new BehaviorSubject(false);
 
   private profile: Profile;
-  private shortProfile: ShortProfile[];
   private userPublications: Publication[];
   private postNotif;
   private commentNotif;
@@ -27,10 +26,6 @@ export class ProfileService {
 
   emitProfileSubject( ) {
     this.profileSubject.next(this.profile);
-  }
-
-  emitShortProfileSubject( ) {
-    this.shortProfileSubject.next(this.shortProfile);
   }
 
   emitPostNotifSubject( ) {
@@ -62,7 +57,7 @@ export class ProfileService {
   }
 
 
-  getNews(userName: string) {
+/*  getNews(userName: string) {
     return new Promise((resolve, reject) => {
     this.httpClient
           .get('http://localhost:3000/api/profiles/notifications/' + userName)
@@ -80,24 +75,7 @@ export class ProfileService {
             }
           );
     });
-  }
-
-  getUsersList() {
-  return new Promise((resolve, reject) => {
-      this.httpClient
-        .get('http://localhost:3000/api/auth/list')
-        .subscribe(
-          (response) => {
-            this.usersListSubject.next(response);              
-            this.emitShortProfileSubject();
-            resolve(response);              
-          },
-          (error) => {
-            reject(error);
-          }
-        );
-  })
-  }  
+  }*/
 
   modifyProfile(profile: Profile) {
     return new Promise((resolve, reject) => {
