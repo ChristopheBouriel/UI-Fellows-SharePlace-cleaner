@@ -21,6 +21,7 @@ export class ProfileService {
   private commentNotif;
 
   seeMine: boolean = true;
+  lastProfileSeen: string;
 
   constructor(private httpClient: HttpClient) { }
 

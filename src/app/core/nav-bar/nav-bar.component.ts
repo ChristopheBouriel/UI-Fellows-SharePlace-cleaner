@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService} from '../services/auth.service';
-//import { ProfileService} from '../services/profile.service';
+import { ProfileService} from '../../profile/profile.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -10,7 +10,8 @@ import { Subscription } from 'rxjs';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private profileService: ProfileService) { }
 
   isAuth: boolean;
   isAdmin: boolean;
@@ -44,13 +45,11 @@ export class NavBarComponent implements OnInit {
         this.userName = userName;
       }
     );
-    console.log('Let\'s see')
   }
 
-  /*onSeeMine() {
-    this.profileService.seeMine = true;
-    this.profileService.searchingSubject.next(false);    
-  }*/
+  onSeeMine() {
+    this.profileService.seeMine = true;    
+  }
 
   onLogout() {
     const date = new Date().toISOString();

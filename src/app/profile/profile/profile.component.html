@@ -39,7 +39,7 @@
                     <button  *ngIf="!fromList && !fromUsersList && !isMine" routerLink="/publications/{{fromPost}}"><img src="./assets/images/back-icon.png" alt="back icon"></button>
                 </div>
                 <div class="col-4 mx-auto my-1 text-right">
-                    <button ><img src="./assets/images/search-icon.png" alt="search icon"></button>
+                    <button routerLink="/search-users" fragment="page-top-search"><img src="./assets/images/search-icon.png" alt="search icon"></button>
                 </div>
             </div>            
         </div>        

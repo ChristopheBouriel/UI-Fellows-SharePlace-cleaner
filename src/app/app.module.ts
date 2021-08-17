@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 //import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
+//import { MatButtonModule } from '@angular/material/button';
+//import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+//import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -22,6 +22,7 @@ import { SearchUsersModule } from './search-users/search-users.module'
 import { PublicationsModule } from './publications/publications.module';
 import { SinglePublicationModule } from './single-publication/single-publication.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -30,9 +31,9 @@ import { SinglePublicationModule } from './single-publication/single-publication
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    MatAutocompleteModule,
+    //MatProgressSpinnerModule,
+    //MatButtonModule,
+    //MatAutocompleteModule,
     //ReactiveFormsModule,
     CoreModule,
     //SharedModule,

@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
   //searching: boolean;
   //research: boolean = false;
   //gotUsersList: boolean;
-  ifBack: boolean;
+  //ifBack: boolean;
 
   constructor(private route: ActivatedRoute,              
               private profileService: ProfileService,
@@ -49,7 +49,7 @@ export class ProfileComponent implements OnInit {
       
     this.userProfile = this.route.snapshot.params['username'];
     
-    console.log(this.userProfile)
+    this.profileService.lastProfileSeen = this.userProfile;
 
     this.publicationService.fromProfileSubject.next(this.userProfile);
     this.publicationService.fromListSubject.subscribe(
@@ -89,18 +89,18 @@ export class ProfileComponent implements OnInit {
       this.profileService.getProfileByUserName(this.userName).then(
         () => this.checkAboutMe()
       );      
-      this.ifBack = true;    
+      //this.ifBack = true;    
     } else if (this.userProfile !== this.userName) {
         this.isMine = false;
         this.checkAboutMe();
       };
 
-    if (this.userProfile !== this.userName && this.ifBack === true) {
+    /*if (this.userProfile !== this.userName && this.ifBack === true) {
       this.profileService.getProfileByUserName(this.userProfile).then(
         () => this.checkAboutMe()
       );
       this.ifBack = false;
-    };
+    };*/
 
     
   

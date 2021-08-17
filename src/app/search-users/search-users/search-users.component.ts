@@ -5,6 +5,8 @@ import { ShortProfile } from '../../core/models/profile';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { SearchUsersService} from '../../search-users/search-users.service';
+import { ProfileService } from 'src/app/profile/profile.service';
+
 
 @Component({
   selector: 'app-search-users',
@@ -17,16 +19,18 @@ export class SearchUsersComponent implements OnInit {
   noUser: string = '';
   usersNameList: string[] = new Array;
   shortProfiles: ShortProfile[];
+  previousProfile: string;
   //aboutMe: string;
   research: boolean = false;
-  gotUsersList: boolean;
+  gotUsersList: boolean = false;
 
   searchForm: FormGroup;
   searchControl = new FormControl();
   filteredUsernames: Observable<string[]>;
 
   constructor(private searchUsersService: SearchUsersService,
-              private router: Router,) { }
+              private profileService: ProfileService,
+              private router: Router) { }
 
   ngOnInit(): void {
 
@@ -42,6 +46,7 @@ export class SearchUsersComponent implements OnInit {
       }
       );
     this.searchUsersService.getUsersList();
+    this.previousProfile = this.profileService.lastProfileSeen;
     //this.fromUsersList = true;
   }
 
