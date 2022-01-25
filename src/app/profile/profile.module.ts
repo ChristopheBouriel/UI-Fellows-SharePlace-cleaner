@@ -18,7 +18,7 @@ import { UserPublicationsComponent } from './profile/user-publications/user-publ
     ProfileRoutingModule
   ],
   providers: [
-    ProfileService
+    //ProfileService
   ],
   exports: [ProfileFormComponent]
 })

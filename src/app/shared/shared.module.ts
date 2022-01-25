@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-
-//import { forbiddenCharactersValidator } from './input-validators'
-
 import { ReactiveFormsModule } from '@angular/forms';
 
 

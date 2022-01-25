@@ -7,16 +7,16 @@ import { LoginComponent } from './core/login/login.component';
 const routes: Routes = [
   {path: 'entrance', component: EntranceComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'signup', loadChildren: () =>
-  import('./profile/profile.module').then(m => m.ProfileModule)},
+  /*{path: 'signup', loadChildren: () =>
+  import('./profile/profile.module').then(m => m.ProfileModule)},*/
   {path: 'publications', loadChildren: () =>
   import('./publications/publications.module').then(m => m.PublicationsModule)},
-  {path: 'publications/id', loadChildren: () =>
+  {path: 'publications/:id', loadChildren: () =>
   import('./single-publication/single-publication.module').then(m => m.SinglePublicationModule)},
-  {path: 'profile/:username', loadChildren: () =>
+  {path: 'profile', loadChildren: () =>
   import('./profile/profile.module').then(m => m.ProfileModule)},
-  {path: 'profile/modify', loadChildren: () =>
-  import('./profile/profile.module').then(m => m.ProfileModule)},
+  /*{path: 'profile/modify', loadChildren: () =>
+  import('./profile/profile.module').then(m => m.ProfileModule)},*/
   {path: 'search-users', loadChildren: () =>
   import('./search-users/search-users.module').then(m => m.SearchUsersModule)},
 

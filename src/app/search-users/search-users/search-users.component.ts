@@ -84,4 +84,8 @@ export class SearchUsersComponent implements OnInit {
     }    
   }
 
+  onBackButton() {
+    this.router.navigate(['profile/' + this.previousProfile]);
+  }
+
 }

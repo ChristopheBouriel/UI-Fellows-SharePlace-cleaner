@@ -4,7 +4,9 @@ import { Profile } from '../core/models/profile';
 import { Publication} from '../core/models/publication';
 import { Subject, BehaviorSubject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ProfileService {
 
   profileSubject = new Subject<Profile>();

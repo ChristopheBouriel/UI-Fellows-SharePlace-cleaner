@@ -48,9 +48,9 @@ export class ProfileComponent implements OnInit {
       });
       
     this.userProfile = this.route.snapshot.params['username'];
-    
-    this.profileService.lastProfileSeen = this.userProfile;
 
+    this.profileService.lastProfileSeen = this.userProfile;
+    
     this.publicationService.fromProfileSubject.next(this.userProfile);
     this.publicationService.fromListSubject.subscribe(
       (fromList) => {

@@ -3,9 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Publication } from '../core/models/publication';
 import { Subject, BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PublicationsService {
 
   publicationsSubject = new Subject<Publication[]>();

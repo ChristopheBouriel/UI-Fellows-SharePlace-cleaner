@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 
 import { Profile } from '../models/profile';
 
-@Injectable(//{ providedIn: 'root'}
-)
+@Injectable()
 export class AuthService {
 
   isAuth$ = new BehaviorSubject<boolean>(false);
